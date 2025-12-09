@@ -369,7 +369,7 @@ background: linear-gradient(135deg, #8c9cfb, #00d9ff);
 }
 
 .card {
-  background-image: url(bg.png);
+  background-image: url(images/bg.png);
    position: relative;
   /* width: 400px; */
   height: 250px;
@@ -584,7 +584,7 @@ header {
 }
 
 .chest-img{
-  background-image: url('download\ logo.png');
+  background-image: url('images/download\ logo.png');
   background-repeat: no-repeat;
   background-size: contain;
   align-items: center;
@@ -614,7 +614,7 @@ header {
 
  /* Animation for chest opening */
     @keyframes openChest {
-        0%   { background-image: url('æhest_closed.png'); }
-        50%  { background-image: url('æhest_ajar.png'); }
-        100% { background-image: url('æhest_open.png'); }
+        0%   { background-image: url('images/æhest_closed.png'); }
+        50%  { background-image: url('images/æhest_ajar.png'); }
+        100% { background-image: url('images/æhest_open.png'); }
     }
