@@ -222,6 +222,7 @@ background: linear-gradient(135deg, #8c9cfb, #00d9ff);
     height: 100%;
     opacity: 0;
     align-items: center;
+    margin: 20px;
 }
 
 .slide1{
