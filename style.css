@@ -22,6 +22,7 @@ nav ul {
     list-style: none;
     display: flex;
     gap: 35px;
+    margin-left: 20px;
 }
 
 nav ul li a {
@@ -77,19 +78,6 @@ width: 40vb;
 .hero button:hover {
     background: white;
 }
-/* 
-
-.skills{
-background: linear-gradient(135deg, #546eff, #fc0808);
-}
-
-.projects{
-background: linear-gradient(135deg, #54ffaf, #b11d00);
-}
-
-.contact{
-background: linear-gradient(135deg, #8c9cfb, #00d9ff);
-} */
 
 .skills, .projects, .contact {
     padding: 70px 80px;
@@ -99,16 +87,6 @@ background: linear-gradient(135deg, #8c9cfb, #00d9ff);
     margin-bottom: 25px;
 }
 
-
-
-/* .figma { width: 90%; background: #00d4ff; }
-.xd { width: 80%; background: #ff2bc5; }
-.uiux { width: 95%; background: #9eff00; } */
-
-@keyframes grow {
-    from { width: 0; }
-    to { width: var(--width); }
-}
 
 /* PROJECT CARDS */
 .projects {
@@ -182,6 +160,18 @@ background: linear-gradient(135deg, #8c9cfb, #00d9ff);
 }
 
 
+.skill-img{
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
 /* CONTACT */
 .contact p {
     font-size: 18px;
@@ -199,98 +189,112 @@ background: linear-gradient(135deg, #8c9cfb, #00d9ff);
     justify-content: center;
     align-items: center;
     text-align: left;
-    /* background: linear-gradient(135deg, #0b0b0b, #222); */
-    /* border: 10px solid black; */
 }
 
-
-.skill-img{
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    font-family: "Poppins", sans-serif;
-    height: 100vh;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    /* background: linear-gradient(135deg, #0b0b0b, #222); */
-}
 
 .slide {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    align-items: center;
-    margin: 20px;
+  position: absolute;
+  width: auto;
+  height: 100%;
+  opacity: 0;
+  align-items: center;
+  /* margin: 20px; */
 }
 
-.slide1{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    opacity: 0;
-    transition: 1s ease-in-out;
 
-}
 .slide.active {
-    opacity: 1;
+  opacity: 1;
 }
 
 .slide img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.slide1 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .banner-content {
-    
-    position: absolute;
-    bottom: 80px;
-    left: 60px;
-    color: #fff;
+  position: absolute;
+  bottom: 80px;
+  left: 60px;
+  color: #fff;
 }
-
 
 .banner-content h1 {
-    font-size: 45px;
-    font-weight: 700;
-    margin-bottom: 10px;
-}
-.banner-content p {
-    font-size: 20px;
-    opacity: 0.9;
+  font-size: 45px;
+  font-weight: 700;
+  margin-bottom: 10px;
 }
 
+.banner-content p {
+  font-size: 20px;
+  opacity: 0.9;
+}
+
+
+
+/* Responsive Banner (Mobile) */
+@media (max-width: 768px) {
+  .banner-slider {
+      height: 60vh;
+  }
+
+  .slide {
+      position: relative;
+      background-color: #91ceff;
+  }
+  .slide img {
+      height: auto;
+      max-height: 60vh;   /* prevents extra tall images */
+      object-fit: cover; 
+  }
+
+  .banner-content {
+      bottom: 20px;
+      left: 20px;
+  }
+
+  .banner-content h1 {
+      font-size: 28px;
+  }
+
+  .banner-content p {
+      font-size: auto;
+  }
+
+  .slide.active {
+  opacity: 1;
+  }
+
+}
+
+
+
+
+
+  
 /* Dots */
 .dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    gap: 10px;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
 }
 
 .dots div {
-    width: 12px;
-    height: 12px;
-    background: #fff;
-    opacity: .5;
-    border-radius: 50%;
-    cursor: pointer;
-    transition: .3s;
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  opacity: .5;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: .3s;
 }
 
 .dots .active-dot {
-    opacity: 1;
-    transform: scale(1.2);
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 .contact-section {
@@ -327,6 +331,7 @@ background: linear-gradient(135deg, #8c9cfb, #00d9ff);
   gap: 10px;
   transition: 0.3s;
 }
+
 
 .contact-item:hover {
   color: #0077b5; /* LinkedIn color feel */
@@ -395,11 +400,23 @@ background: linear-gradient(135deg, #8c9cfb, #00d9ff);
 }
 
 .card img {
-  margin: 12px;
-  width: 80%;
-  height: 45%;
+ /* display: block; */
+  margin: auto;
+ /* margin: 12px; */
+  width: auto;
+  height: 8rem;
   border-radius: 10px;
-  /* margin-bottom: 15px; */
+  /* margin-bottom: 0rem;  */
+}
+
+.img-container{
+  display: flex;
+  justify-content: center;
+  margin: 12px;
+  /* width: 10rem; */
+  height: 8.5rem; 
+  border-radius: 10px;
+  margin-bottom: 0rem; 
 }
 
 .card h3 {
