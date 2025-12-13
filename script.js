@@ -32,3 +32,24 @@ function goToSlide(i) {
 
 // Auto slide
 setInterval(nextSlide, 4000);
+
+
+
+const img = document.querySelector(".gifPlayer img");
+
+document.addEventListener("mousemove", function(e) {
+  // Get viewport center
+  const centerX = window.innerWidth / 2;
+  const centerY = window.innerHeight / 2;
+
+  // Cursor position relative to center
+  const offsetX = e.clientX - centerX;
+  const offsetY = e.clientY - centerY;
+
+  // Shadow moves opposite to cursor (sun effect)
+  const shadowX = -offsetX / 20; // tweak divisor for intensity
+  const shadowY = -offsetY / 20;
+
+  // Apply drop-shadow dynamically
+  img.style.filter = `drop-shadow(${shadowX}px ${shadowY}px 20px rgba(37, 8, 8, 0.6))`;
+});
